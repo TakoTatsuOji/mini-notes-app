@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .notes-container {
+        @apply container mx-auto;
+    }
+
+    .h1-design {
+        @apply text-4xl text-center font-bold my-5;
+    }
+
+    .table-design {
+        @apply bg-neutral-900 min-w-full divide-y divide-neutral-700;
+    }
+
+    .tbody-design {
+        @apply divide-y divide-neutral-700;
+    }
+
+    .tr-design {
+        @apply hover:bg-neutral-700;
+    }
+
+    .th-design {
+        @apply px-6 py-3 text-center text-xs font-medium uppercase text-neutral-500;
+    }
+
+    .td-design {
+        @apply px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-neutral-200;
+    }
+
+    .btn {
+        @apply py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-white;
+    }
+
+}
+
+@layer utilities {
+    .show {
+        @apply bg-blue-600 hover:bg-blue-700;
+    }
+
+    .edit {
+        @apply bg-teal-500 hover:bg-teal-600;
+    }
+
+    .add {
+        @apply bg-yellow-500 hover:bg-yellow-600;
+    }
+
+    .delete {
+        @apply bg-red-500 hover:bg-red-600;
+    }
+}
