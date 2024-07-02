@@ -2,6 +2,9 @@
 
 <div class="notes-container">
     <h1 class="h1-design">Your Notes</h1>
+    <button type="button" class="btn add">
+        <a href="/add">Add</a>
+    </button>
     <table class="table-design">
         <thead>
             <tr>
@@ -17,16 +20,13 @@
                     <td class="td-design"><?= $note['title'] ?></td>
                     <td class="text-center">
                         <button type="button" class="btn show">
-                            <a href="/show">Show</a>
+                            <a href="/show?id=<?= $note['id'] ?>">Show</a>
                         </button>
                         <button type="button" class="btn edit">
-                            <a href="/edit">Edit</a>
-                        </button>
-                        <button type="button" class="btn add">
-                            <a href="/add">Add</a>
+                            <a href="/edit?id=<?= $note['id'] ?>">Edit</a>
                         </button>
                         <button type="button" class="btn delete">
-                            <a href="/delete">Delete</a>
+                            <a href="/delete?id=<?= $note['id'] ?>">Delete</a>
                         </button>
                     </td>
                 </tr>
