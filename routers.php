@@ -9,7 +9,9 @@ $routes = [
     '/show' => 'controllers/show.php',
     '/edit' => 'controllers/edit.php',
     '/add' => 'controllers/add.php',
-    '/delete' => 'controllers/delete.php'
+    '/delete' => 'controllers/delete.php',
+    '/addnote' => 'controllers/addnote.php',
+    '/editnote' => 'controllers/editnote.php'
 ];
 
 function routeToController($path, $routes) {
