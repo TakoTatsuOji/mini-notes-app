@@ -10,13 +10,12 @@ function dd(mixed $value) {
     die();
 }
 
-function isInputBlank(mixed $value, string|int $id = null) {
-    if (empty($value)) {
-        $error = http_build_query(['error' => 'Don\'t leave the fields blank!'], "&");
+function isInputBlank(mixed $value) {
 
-        header("Location: {$_SERVER['HTTP_REFERER']}?{$id}{$error}");
-        die();
+    if (empty($value)) {
+        // $error = http_build_query(['error' => 'Don\'t leave the fields blank!'], "&");
+        return null;
     }
 
-    return $value;
+    return htmlspecialchars($value);
 }
