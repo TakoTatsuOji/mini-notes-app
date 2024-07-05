@@ -2,14 +2,16 @@
 
 <div class="notes-container">
     <?php require 'partials/goback.php' ?>
-    <form action="/addnote" method="post">
+    <form method="post">
         <div>
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" placeholder="Title of the note" required>
+            <input type="text" name="title" id="title" placeholder="Title of the note" required value="<?= $_POST['title'] ?? '' ?>">
         </div>
         <div>
             <label for="body">Body</label>
-            <textarea name="body" id="body" cols="30" rows="10" placeholder="Body of the note" required></textarea>
+            <textarea name="body" id="body" cols="30" rows="10" placeholder="Body of the note" required>
+                <?= $_POST['title'] ?? '' ?>
+            </textarea>
         </div>
         <div>
             <button type="submit">Add Note</button>
