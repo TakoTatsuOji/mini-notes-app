@@ -17,5 +17,5 @@ function isInputBlank(mixed $value) {
         return null;
     }
 
-    return htmlspecialchars($value);
+    return htmlspecialchars(trim($value));
 }
