@@ -1,3 +1,3 @@
-<?php if (isset($errors['empty'])): ?>
-    <small class="text-red-600"><?= $errors['empty'] ?></small>
+<?php if (isset($errors['inputerr'])): ?>
+    <small class="text-red-600"><?= $errors['inputerr'] ?></small>
 <?php endif ?>
