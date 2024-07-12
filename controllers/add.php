@@ -1,15 +1,15 @@
 <?php
 
-require 'Validator.php';
-
-$website_title = "Add Note";
+use Classes\Database;
+use Classes\Validator;
 
 $db_config = require 'dbconfig.php';
 
 $db = new Database($db_config['dsn_params'], $db_config['username'], $db_config['password']);
 
+$errors = [];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = [];
 
     $title = isInputBlank($_POST['title']);
     $body = isInputBlank($_POST['body']);
@@ -26,4 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 }
 
-require 'views/add.view.php';
+view('add.view.php', [
+    'website_title' => "Add Note",
+    'errors' => $errors
+]);

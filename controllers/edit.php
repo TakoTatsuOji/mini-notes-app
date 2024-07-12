@@ -1,6 +1,7 @@
 <?php
 
-require 'Validator.php';
+use Classes\Database;
+use Classes\Validator;
 
 $db_config = require 'dbconfig.php';
 
@@ -10,10 +11,9 @@ $id = $_GET['id'];
 
 $current_note_content = $db->querySelectOne([':id' => $id], ['title', 'body']);
 
-$website_title = "Edit {$current_note_content['title']} Note";
+$errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = [];
 
     $title = isInputBlank($_POST['title']);
     $body = isInputBlank($_POST['body']);
@@ -30,4 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 }
 
-require 'views/edit.view.php';
+view('edit.view.php', [
+    'website_title' => "Edit {$current_note_content['title']} Note",
+    'errors' => $errors
+]);
