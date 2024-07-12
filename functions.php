@@ -19,3 +19,12 @@ function isInputBlank(mixed $value) {
 
     return htmlspecialchars(trim($value));
 }
+
+function basePath($path) {
+    return BASE_PATH . $path;
+}
+
+function view($viewPath, $attr = []) {
+    extract($attr);
+    require basePath('views/' . $viewPath);
+}
