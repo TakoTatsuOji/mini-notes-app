@@ -3,7 +3,7 @@
 use Classes\Database;
 use Classes\Validator;
 
-$db_config = require 'dbconfig.php';
+$db_config = require basePath('dbconfig.php');
 
 $db = new Database($db_config['dsn_params'], $db_config['username'], $db_config['password']);
 
@@ -32,5 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 view('edit.view.php', [
     'website_title' => "Edit {$current_note_content['title']} Note",
+    'current_note_content' => $current_note_content,
     'errors' => $errors
 ]);
